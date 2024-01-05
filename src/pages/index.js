@@ -1,6 +1,7 @@
 import Navbar from "../components/Header/Navbar.jsx"
 import Slider from "../components/Slider/Slider.jsx"
 import OTT_House from "../components/OTT_House/OTT_House.jsx"
+import GenreMovieList from '../components/GenreMovieList/GenreMovieList.jsx'
 import Footer from "../components/Footer/Footer.jsx"
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
             <Navbar />
             <Slider />
             <OTT_House />
+            <GenreMovieList />
             <Footer />
         </div>
     )

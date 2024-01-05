@@ -30,10 +30,6 @@ const Slider = () => {
             >
             {
                 movieList.map((item,index)=>(
-                    // <img key={index} src={IMAGE_BASE_URL+item.backdrop_path} 
-                    //     className='min-w-full object-cover object-left-top'
-                    //     alt={item.title}
-                    // />
                     <Image
                         key={index}
                         src={IMAGE_BASE_URL+item.backdrop_path} 
