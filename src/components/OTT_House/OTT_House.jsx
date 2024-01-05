@@ -7,33 +7,32 @@ import jioCinema from '../../assets/Images/jioCinema.jpeg'
 
 import Image from 'next/image'
 
-
 function OTT_House() {
 
     const OTT_List=[
         {
             id:1,
-            image:primeVideo,
+            image:primeVideo
         },
         {
             id:2,
-            image:netflix,
+            image:netflix
         },
         {
             id:3,
-            image:disney,
+            image:disney
         },
         {
             id:4,
-            image:sonyLiv,
+            image:sonyLiv
         },
         {
             id:5,
-            image:zee5,
+            image:zee5
         },
         {
             id:6,
-            image:jioCinema,
+            image:jioCinema
         },
     ]
 
