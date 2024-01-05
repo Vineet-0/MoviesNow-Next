@@ -1,7 +1,9 @@
 import React from 'react'
 import { FaRegStar } from "react-icons/fa";
 
+import Image from 'next/image'
 const IMAGE_BASE_URL="https://image.tmdb.org/t/p/w500";
+const PLACEHOLDER_BASE_URL="https://placeholder.pics/svg/500x750/E0F9FF/000000-E0F9FF/";
 
 const Card = ({ cardData }) => {
 
@@ -13,25 +15,43 @@ const Card = ({ cardData }) => {
                         <div className="flex flex-col justify-end mx-auto w-full h-full max-h-[35rem] max-w-fit overflow-hidden">
                             {/* Movie Poster with Fallback Image */}
                             {movie.poster_path ? (
-                                <img
+                                <Image
                                     key={movie.id}
                                     src={IMAGE_BASE_URL+movie.poster_path}
                                     alt={movie.title}
-                                    className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
                                     width={400}
                                     height={600}
+                                    className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
                                     style={{ margin: "auto" }}
                                 />
+                                // <img
+                                //     key={movie.id}
+                                //     src={IMAGE_BASE_URL+movie.poster_path}
+                                //     alt={movie.title}
+                                //     className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
+                                //     width={400}
+                                //     height={600}
+                                //     style={{ margin: "auto" }}
+                                // />
                             ) : (
-                                <img
+                                <Image
                                     key={movie.id}
-                                    src={`https://placeholder.pics/svg/500x750/E0F9FF/000000-E0F9FF/${movie.title}`}
+                                    src={IMAGE_BASE_URL+movie.title}
                                     alt={movie?.title}
-                                    className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
                                     width={400}
                                     height={600}
+                                    className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
                                     style={{ margin: "auto" }}
                                 />
+                                // <img
+                                //     key={movie.id}
+                                //     src={`https://placeholder.pics/svg/500x750/E0F9FF/000000-E0F9FF/${movie.title}`}
+                                //     alt={movie?.title}
+                                //     className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
+                                //     width={400}
+                                //     height={600}
+                                //     style={{ margin: "auto" }}
+                                // />
                             )}
                             {/* Movie Details */}
                             <h3 className="mt-3 text-md text-white h-[30px] overflow-hidden">{movie?.title}</h3>

@@ -34,7 +34,7 @@ const Slider = () => {
                         key={index}
                         src={IMAGE_BASE_URL+item.backdrop_path} 
                         alt={item.title}
-                        width={9001}
+                        width={900}
                         height={500}
                         className="min-w-full object-cover object-left-top"
                     />
