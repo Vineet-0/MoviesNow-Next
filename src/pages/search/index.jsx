@@ -22,7 +22,8 @@ const index = () => {
         currentPage = currentPage + 1;
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key='+API_KEY+'&page='+currentPage+'&include_adult=false')
           .then(resp => {
-            setMovies([...movies, ...resp.data.results]);
+            setMovies((movies) => [...movies, ...resp.data.results]);
+            // setMovies([...movies, ...resp.data.results]);
           })
           .catch(error => {
             console.error("Error fetching data:", error);
