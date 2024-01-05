@@ -25,7 +25,7 @@ const Card = ({ cardData }) => {
                                     style={{ margin: "auto" }}
                                 />
                             ) : (
-                                <div className='w-full h-full flex items-center justify-center rounded-lg bg-slate-800 animate-pulse'>
+                                <div className='w-full min-h-[200px] h-full flex items-center justify-center rounded-lg bg-slate-800 animate-pulse'>
                                     <div className='-rotate-45 text-5xl'>
                                         {movie.title}
                                     </div>
