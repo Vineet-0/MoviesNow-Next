@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
+import Link from 'next/link'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 
 import MovieCard from '../Cards/MovieCard.jsx';
@@ -38,9 +39,9 @@ function MovieList({genreId,index_}) {
    
         <div ref={elementRef} className='flex overflow-x-auto gap-8 scroll-smooth pt-4 px-3 pb-4'>
             {movieList.map((item)=>(
-            <a key={item?.id} href={`/movie/${item?.id}`}>
+            <Link key={item?.id} href={`/movies/${item?.id}`}>
                 {index_%3==1?<HrMovieCard key={item.id} movie={item}/>:<MovieCard key={item.id}  movie={item} />}
-            </a> 
+            </Link> 
             ))}
         </div>
         

@@ -2,17 +2,17 @@ import React from 'react'
 import { FaRegStar } from "react-icons/fa";
 
 import Image from 'next/image'
+import Link from 'next/link'
 const IMAGE_BASE_URL="https://image.tmdb.org/t/p/w500";
-const PLACEHOLDER_BASE_URL="https://placeholder.pics/svg/500x750/E0F9FF/000000-E0F9FF/";
 
 const Card = ({ cardData }) => {
 
     return (
         <>
             {cardData.map((movie) => (
-                <a key={movie?.id} href={`/movie/${movie?.id}`}>
-                    <div className="group z-6">
-                        <div className="flex flex-col justify-end mx-auto w-full h-full max-h-[35rem] max-w-fit overflow-hidden">
+                <Link key={movie?.id} href={`/movies/${movie?.id}`}>
+                    <div className="w-full h-full group z-6">
+                        <div className="w-full h-full max-h-[35rem] flex flex-col justify-end mx-auto overflow-hidden">
                             {/* Movie Poster with Fallback Image */}
                             {movie.poster_path ? (
                                 <Image
@@ -24,38 +24,16 @@ const Card = ({ cardData }) => {
                                     className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
                                     style={{ margin: "auto" }}
                                 />
-                                // <img
-                                //     key={movie.id}
-                                //     src={IMAGE_BASE_URL+movie.poster_path}
-                                //     alt={movie.title}
-                                //     className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
-                                //     width={400}
-                                //     height={600}
-                                //     style={{ margin: "auto" }}
-                                // />
                             ) : (
-                                <Image
-                                    key={movie.id}
-                                    src={IMAGE_BASE_URL+movie.title}
-                                    alt={movie?.title}
-                                    width={400}
-                                    height={600}
-                                    className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
-                                    style={{ margin: "auto" }}
-                                />
-                                // <img
-                                //     key={movie.id}
-                                //     src={`https://placeholder.pics/svg/500x750/E0F9FF/000000-E0F9FF/${movie.title}`}
-                                //     alt={movie?.title}
-                                //     className="rounded-lg h-full object-cover object-center group-hover:opacity-75"
-                                //     width={400}
-                                //     height={600}
-                                //     style={{ margin: "auto" }}
-                                // />
+                                <div className='w-full h-full flex items-center justify-center rounded-lg bg-slate-800 animate-pulse'>
+                                    <div className='-rotate-45 text-5xl'>
+                                        {movie.title}
+                                    </div>
+                                </div>
                             )}
                             {/* Movie Details */}
-                            <h3 className="mt-3 text-md text-white h-[30px] overflow-hidden">{movie?.title}</h3>
-                            <div className="flex flex-row items-center justify-between">
+                            <h3 className="w-full mt-3 text-md text-white h-[30px] overflow-hidden">{movie?.title}</h3>
+                            <div className="w-full flex flex-row items-center justify-between">
                                 <p className="mt-1 text-md font-medium text-white">
                                     {parseInt(movie?.release_date)}
                                 </p>
@@ -70,7 +48,7 @@ const Card = ({ cardData }) => {
                             </div>
                         </div>
                     </div>
-                </a>
+                </Link>
             ))}
         </>
     )

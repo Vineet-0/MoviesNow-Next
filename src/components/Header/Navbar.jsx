@@ -52,7 +52,7 @@ function Header() {
             >
                 <Image
                     src={logo}
-                    alt="Picture of your mum"
+                    alt="MoviesNow Logo"
                     width={9001}
                     height={500}
                     className='w-[150px] md:w-[200px] object-cover'

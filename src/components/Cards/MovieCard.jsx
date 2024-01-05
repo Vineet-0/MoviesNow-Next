@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+import Image from 'next/image'
+
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const LOADING_IMAGE_URL = "https://via.placeholder.com/150"; // Replace with your loading skeleton image URL
 const MIN_LOADING_TIME_MS = 500;
@@ -21,13 +24,24 @@ function MovieCard({ movie }) {
         {loading && (
           <div className="absolute inset-0 bg-[#38406e] animate-pulse"></div>
         )}
-        <img
+        {/* <img
           src={movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : LOADING_IMAGE_URL}
           alt={movie ? movie.title : 'Loading...'}
           className={`w-full h-full object-cover cursor-pointer rounded-lg
             ${loading ? 'opacity-0' : 'opacity-100'}
             hover:scale-105 transition-all duration-150 ease-in-out`}
           onLoad={() => setLoading(false)} // Mark as not loading when the image is loaded
+        /> */}
+        <Image
+            key={movie.id}
+            src={IMAGE_BASE_URL + movie.poster_path}
+            alt={movie ? movie.title : 'Loading...'}
+            width={400}
+            height={600}
+            className={`w-full h-full object-cover cursor-pointer rounded-lg
+              ${loading ? 'opacity-0' : 'opacity-100'}
+              hover:scale-105 transition-all duration-150 ease-in-out`}
+            onLoad={() => setLoading(false)} // Mark as not loading when the image is loaded
         />
       </div>
     </>
