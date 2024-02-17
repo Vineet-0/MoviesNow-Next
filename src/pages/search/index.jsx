@@ -13,7 +13,7 @@ const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 var currentPage = 1;
 
-const index = () => {
+const Search = () => {
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -71,4 +71,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Search
