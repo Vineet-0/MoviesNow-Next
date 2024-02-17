@@ -30,15 +30,15 @@ const index = () => {
           });
     }
 
-    // useEffect(() => {
-    //     axios.get('https://api.themoviedb.org/3/movie/popular?api_key='+API_KEY+'&page='+currentPage+'&include_adult=false')
-    //       .then(resp => {
-    //         setMovies(resp.data.results);
-    //       })
-    //       .catch(error => {
-    //         console.error("Error fetching data:", error);
-    //       });
-    //   }, []);
+    useEffect(() => {
+        axios.get('https://api.themoviedb.org/3/movie/popular?api_key='+API_KEY+'&page='+currentPage+'&include_adult=false')
+          .then(resp => {
+            setMovies(resp.data.results);
+          })
+          .catch(error => {
+            console.error("Error fetching data:", error);
+          });
+      }, []);
     return (
         <div className="w-full min-h-screen scrollbar-hide">
             <Navbar />
